@@ -1,0 +1,17 @@
+{
+  "name": "zod-message-bus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "keywords": [],
+  "author": "Ahmed Felfel",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "tsup": "^8.0.2",
+    "typescript": "^4.4.4"
+  }
+}
