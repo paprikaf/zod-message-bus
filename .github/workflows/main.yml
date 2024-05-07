@@ -1,21 +1,36 @@
 name: CI
+
 on:
   push:
     branches:
       - "**"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
       - uses: pnpm/action-setup@v2
         with:
           version: 7
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: "pnpm"
-      - name: Configure PNPM
-        run: pnpm config set auto-install-peers true  # Adjust this based on your project's requirements
+          cache: 'pnpm'
+
       - name: Install dependencies
-        run: pnpm ci  # This replaces 'pnpm install --frozen-lockfile'
+        run: pnpm ci
+        env:
+          PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build project
+        run: pnpm build
