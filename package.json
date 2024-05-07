@@ -1,6 +1,6 @@
 {
   "name": "@crate.ai/zod-message-bus",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "private": false,
   "main": "./dist/index.js",
@@ -23,8 +23,5 @@
     "tsup": "^8.0.2",
     "typescript": "^4.4.4",
     "vitest": "^1.6.0"
-  },
-  "dependencies": {
-    "zod-message-bus": "link:"
   }
 }

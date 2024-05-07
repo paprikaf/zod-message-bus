@@ -1,5 +1,11 @@
 # @crate.ai/zod-message-bus
 
+## 0.0.4
+
+### Patch Changes
+
+- Fixed issue when dist folder was not being sent live
+
 ## 0.0.3
 
 ### Patch Changes
