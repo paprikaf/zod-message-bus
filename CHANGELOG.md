@@ -1,5 +1,11 @@
 # @crate.ai/zod-message-bus
 
+## 0.1.1
+
+### Patch Changes
+
+- e51c22e: Implemented functionality with zod
+
 ## 0.1.0
 
 ### Minor Changes

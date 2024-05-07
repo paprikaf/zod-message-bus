@@ -1,6 +1,6 @@
 {
   "name": "@crate.ai/zod-message-bus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "private": false,
   "main": "./dist/index.js",
@@ -14,10 +14,14 @@
     "ci": "pnpm run lint && pnpm run test && pnpm run build",
     "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
   },
-  "keywords": ["zod", "message-bus", "typescript"],
+  "keywords": [
+    "zod",
+    "message-bus",
+    "typescript"
+  ],
   "author": "Ahmed Felfel",
   "license": "MIT",
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/paprikaf/zod-message-bus"
   },
