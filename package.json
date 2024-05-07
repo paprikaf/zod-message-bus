@@ -1,19 +1,23 @@
 {
-  "name": "zod-message-bus",
-  "version": "1.0.0",
+  "name": "@crate.ai/zod-message-bus",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.m.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vitest",
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build"
+    "ci": "pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && pnpm run changesets publish"
   },
   "keywords": [],
   "author": "Ahmed Felfel",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^18.11.17",
     "tsup": "^8.0.2",
     "typescript": "^4.4.4",
