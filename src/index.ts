@@ -1,4 +1,2 @@
-export const hello = () => {
-    console.log('Hello, world!');
-};
-
+export * from "./createMessageProtocol"
+export * from "./type"
