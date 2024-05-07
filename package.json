@@ -1,6 +1,6 @@
 {
-  "name": "@crate.ai/zod-message-bus",
-  "version": "0.1.1",
+  "name": "@crate.ai/zod-message-protocol",
+  "version": "0.1.0",
   "description": "",
   "private": false,
   "main": "./dist/index.js",
@@ -14,20 +14,16 @@
     "ci": "pnpm run lint && pnpm run test && pnpm run build",
     "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
   },
-  "keywords": [
-    "zod",
-    "message-bus",
-    "typescript"
-  ],
+  "keywords": ["zod", "message-protocol", "typescript"],
   "author": "Ahmed Felfel",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paprikaf/zod-message-bus"
+    "url": "https://github.com/paprikaf/zod-message-protocol"
   },
-  "homepage": "https://github.com/paprikaf/zod-message-bus#readme",
+  "homepage": "https://github.com/paprikaf/zod-message-protocol#readme",
   "bugs": {
-    "url": "https://github.com/paprikaf/zod-message-bus/issues"
+    "url": "https://github.com/paprikaf/zod-message-protocol/issues"
   },
   "peerDependencies": {
     "zod": "^3"

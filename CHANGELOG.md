@@ -1,4 +1,4 @@
-# @crate.ai/zod-message-bus
+# @crate.ai/zod-message-protocol
 
 ## 0.1.1
 
