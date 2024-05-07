@@ -10,22 +10,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - uses: pnpm/action-setup@v2
         with:
           version: 7
+
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x  # Ensure this matches your local version
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm ci
-      - name: List installed packages
-        run: pnpm list
-      - name: Check node_modules
+          node-version: 16.x
+          cache: 'none'
+
+      - name: Clear pnpm cache
+        run: pnpm store prune
+
+      - name: Install dependencies verbose
+        run: pnpm ci --verbose
+
+      - name: List node_modules contents
         run: ls node_modules
+
+      - name: Check vitest installation
+        run: pnpm list vitest
+
       - name: Run lint
         run: pnpm lint
+
       - name: Run tests
         run: pnpm test
+
       - name: Build project
-        run: pnpm build
+        run: pnpm build      
