@@ -2,7 +2,7 @@ import { z } from "zod";
 import { createMessageProtocol } from "./createMessageProtocol";
 
 
-const chromeExtenseion = createMessageProtocol({
+const protocol = createMessageProtocol({
     events: {
         LOG_IN: {
            username: z.string(),
@@ -12,6 +12,21 @@ const chromeExtenseion = createMessageProtocol({
     }
 })
 
-const send = chromeExtenseion.createHandler(window.postMessage)
+//iframe.ts
 
-const handler = chromeExtenseion.createHandler((event) =>{})
+const sendToParent = protocol.createHandler(window.parent.postMessage)
+
+const handlParentEvent = protocol.createHandler((event) => {
+    console.log(event)
+})
+
+
+window.addEventListener('message', (event) => {
+    handlParentEvent(event.data)
+})
+
+//parent.ts
+
+const iframe = document.querySelector('iframe') as HTMLIFrameElement
+const sendToChild = protocol.createHandler(iframe!.contentWindow!.postMessage)
+
