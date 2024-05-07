@@ -1,5 +1,15 @@
 # @crate.ai/zod-message-bus
 
+## 0.1.0
+
+### Minor Changes
+
+- 1848160: Added createMessageProtcolAPI
+
+### Patch Changes
+
+- e36f3c3: update pnpm-lock
+
 ## 0.0.4
 
 ### Patch Changes
