@@ -24,24 +24,9 @@ jobs:
         with:
           node-version: 16.x
           cache: 'pnpm'
-
-      - name: Install dependencies explicitly
-        run: pnpm install --verbose
-
-      - name: Echo PNPM_HOME
-        run: echo $PNPM_HOME
-
-      - name: Where is pnpm?
-        run: which pnpm
-
-      - name: Pnpm version
-        run: pnpm -v
-
-      - name: List node_modules content
-        run: ls node_modules
-
-      - name: Check if vitest is installed
-        run: pnpm list vitest
-
+      
+      - name: Install dependencies --frozen-lockfile
+        run: pnpm install --frozen-lockfile
+        
       - name: Run CI script
         run: pnpm run ci
