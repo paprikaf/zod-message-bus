@@ -14,4 +14,4 @@ const chromeExtenseion = createMessageProtocol({
 
 const send = chromeExtenseion.createSender(window.postMessage)
 
-const handler = chromeExtenseion.createHandler((event) =>{})
+const handler = chromeExtenseion.createReceiver((event) =>{})
