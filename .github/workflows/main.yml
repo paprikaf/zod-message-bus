@@ -12,23 +12,34 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - uses: pnpm/action-setup@v2
         with:
           version: 7
+
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 14.x
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm ci --verbose
-      - name: List node_modules
+
+      - name: Install dependencies explicitly
+        run: pnpm install --verbose
+
+      - name: Echo PNPM_HOME
+        run: echo $PNPM_HOME
+
+      - name: Where is pnpm?
+        run: which pnpm
+
+      - name: Pnpm version
+        run: pnpm -v
+
+      - name: List node_modules content
         run: ls node_modules
+
       - name: Check if vitest is installed
         run: pnpm list vitest
-      - name: Run lint
-        run: pnpm lint
-      - name: Run tests
-        run: pnpm test
-      - name: Build project
-        run: pnpm build
-      
+
+      - name: Run CI script
+        run: pnpm run ci --verbose
+
